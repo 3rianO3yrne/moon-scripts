@@ -1,0 +1,7 @@
+name: moon-scripts
+
+services:
+  app:
+    build: 
+      context: .
+      target: app
