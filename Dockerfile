@@ -1,12 +1,14 @@
 
 FROM python:3.12
 
-WORKDIR /scripts
+WORKDIR /code
 
-COPY requirements.txt ./
+COPY requirements.txt /code/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade --verbose -r requirements.txt
+RUN pip install --no-cache-dir --upgrade --verbose -r /code/requirements.txt
 
-COPY ./scripts .
+COPY ./app /code/app
 
-CMD ["python", "./run_horizons.py"]
+COPY ./scripts /code/scripts
+
+CMD ["fastapi", "run", "app/main.py", "--port", "8000", "--proxy-headers"]

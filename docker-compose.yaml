@@ -1,7 +1,12 @@
 name: moon-scripts
 
 services:
-  app:
-    build: 
+  api:
+    build:
       context: .
-      target: app
+    container_name: fastapi-application
+    environment:
+      PORT: 8000
+    ports:
+      - '8000:8000'
+    restart: "no"

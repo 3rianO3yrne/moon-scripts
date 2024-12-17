@@ -1,18 +1,28 @@
 REPO := horizons
 TAG := 1.0
 
-build:
+docker_build:
 	docker build \
 		-t ${REPO}:${TAG} .
 
-run: 
+run_build: 
 	docker run ${REPO}:${TAG}
 
 down: 
 	docker compose down --remove-orphans 
 
 up: 
-	docker compose up app
+	docker compose up
 
-run: 
-	docker compose run app 
+rebuild:
+	docker compose down --remove-orphans 
+	docker compose up --force-recreate --build
+
+
+prune:
+	docker image prune
+	docker container prune
+	
+remove: 
+	docker compose down -v --rmi local
+	docker builder prune

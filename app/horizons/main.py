@@ -1,6 +1,5 @@
-# pip3 install requests
-# python3 run_horizons.py
 import requests
+from typing import Union
 
 
 def run():
@@ -23,10 +22,3 @@ def run():
 
     response = requests.get(url, params=params)
     print(response.text)
-
-
-if __name__ == "__main__":
-    print("begin run_horizons")
-    run()
-
-    print("end run_horizons")
