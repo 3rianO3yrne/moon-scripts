@@ -9,9 +9,9 @@ The scripts here can be run either in a docker container or as a python script.
 The docker container contains a FastApi server to interact with the [Horizons API](https://ssd.jpl.nasa.gov/horizons/) for ease of use.
 
 ## Technology
-* Python
-* Docker
-* FastApi
+* [Python](https://www.python.org/)
+* [Docker](https://www.docker.com/)
+* [FastApi](https://fastapi.tiangolo.com/)
 
 ### Requirements
 * Docker Desktop
